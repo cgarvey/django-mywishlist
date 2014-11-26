@@ -1,0 +1,7 @@
+{
+  "name": "django-mywishlist",
+  "description": "Django Wishlist Manager App",
+  "devDependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
