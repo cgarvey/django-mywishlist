@@ -11,3 +11,7 @@ node_modules/
 
 # VirtualEnv
 venv/
+
+# Django
+local_settings.py
+
