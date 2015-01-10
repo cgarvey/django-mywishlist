@@ -6,7 +6,6 @@ class Command(NoArgsCommand):
 	def handle_noargs( self, **options ):
 		from django.template.loader import render_to_string
 		from wishlist.models import Item
-		# import apperrific.util as U
 
 		filename = "publish/index.html"
 
