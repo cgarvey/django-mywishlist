@@ -52,8 +52,16 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+MEDIA_ROOT = '/media/'
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR + "/publish/static/"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'prj/static'),
+)
 
+TEMPLATE_DIRS = (
+    BASE_DIR + "templates/",
+)
 
 # Local settings overrides (store your own values for DB / SECRET in local_seetings.py)
 try: from local_settings import *
