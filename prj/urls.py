@@ -3,4 +3,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     url(r'^djadmin/', include(admin.site.urls)),
+
+	# Root
+	url( r'^$', 'wishlist.views.index' ),
 )
