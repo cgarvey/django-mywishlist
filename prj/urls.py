@@ -1,9 +1,13 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 
-urlpatterns = patterns('',
+admin.autodiscover()
+
+from wishlist import views
+
+urlpatterns = [
     url(r'^djadmin/', include(admin.site.urls)),
 
 	# Root
-	url( r'^$', 'wishlist.views.index' ),
-)
+	url( r'^$', views.index ),
+]

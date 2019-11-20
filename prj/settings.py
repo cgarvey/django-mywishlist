@@ -3,7 +3,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Debug settings (make sure to set to False in production/deploys)
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 # Must be specified (make it good and long/random!)
 SECRET_KEY = ''
@@ -59,9 +58,24 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'prj/static'),
 )
 
-TEMPLATE_DIRS = (
-    BASE_DIR + "templates/",
-)
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [],
+    'APP_DIRS': True,
+    'OPTIONS': {
+        'debug': DEBUG,
+        'context_processors': [
+            'django.template.context_processors.debug',
+            'django.template.context_processors.request',
+            'django.contrib.auth.context_processors.auth',
+            'django.contrib.messages.context_processors.messages'
+        ],
+    },
+}]
+
+# TEMPLATE_DIRS = (
+#     BASE_DIR + "templates/",
+# )
 
 # Local settings overrides (store your own values for DB / SECRET in local_seetings.py)
 try: from local_settings import *
