@@ -1,10 +1,9 @@
 ## Django Admin
 from django.contrib import admin
 
-from wishlist.models import Item
+from wishlist.models import *
 
-#admin.site.register( Category )
-#admin.site.register( Item )
+admin.site.register( Category )
 
 class ItemAdmin( admin.ModelAdmin ) :
 	list_display = ( "id", "name", "category", "sort_order", "price" )
