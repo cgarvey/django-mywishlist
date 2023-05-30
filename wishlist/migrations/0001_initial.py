@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('price', models.DecimalField(null=True, max_digits=10, decimal_places=2, blank=True)),
                 ('sort_order', models.IntegerField(default=0)),
                 ('url', models.URLField(null=True, blank=True)),
-                ('category', models.ForeignKey(related_name='itm_category_cat', to='wishlist.Category')),
+                ('category', models.ForeignKey(related_name='itm_category_cat', to='wishlist.Category', on_delete=models.DO_NOTHING)),
             ],
             options={
             },

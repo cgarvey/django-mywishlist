@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.urls import path
 from django.contrib import admin
 
 admin.autodiscover()
@@ -6,8 +6,8 @@ admin.autodiscover()
 from wishlist import views
 
 urlpatterns = [
-    url(r'^djadmin/', include(admin.site.urls)),
+	path('djadmin/', admin.site.urls),
 
 	# Root
-	url( r'^$', views.index ),
+	path( '', views.index ),
 ]

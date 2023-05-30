@@ -26,7 +26,7 @@ class Item( models.Model ):
 	created_date_time = models.DateTimeField( auto_now_add=True )
 	modified_date_time = models.DateTimeField( auto_now=True )
 
-	category = models.ForeignKey( "Category", related_name="itm_category_cat" )
+	category = models.ForeignKey( "Category", related_name="itm_category_cat", on_delete=models.DO_NOTHING )
 	description = models.TextField( max_length=1024, blank=True, null=True )
 	is_active = models.BooleanField( default=True )
 	is_booked = models.BooleanField( default=True )
@@ -61,7 +61,10 @@ class Item( models.Model ):
 		'''
 		Get the domain of the URL, if any
 		'''
-		from urlparse import urlparse
+		# from urlparse import urlparse
+		from urllib.parse import urlparse
+
+
 
 		if( self.url ):
 			o = urlparse( self.url )

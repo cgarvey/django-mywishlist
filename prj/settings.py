@@ -18,12 +18,12 @@ INSTALLED_APPS = (
     'wishlist'
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -78,5 +78,5 @@ TEMPLATES = [{
 # )
 
 # Local settings overrides (store your own values for DB / SECRET in local_seetings.py)
-try: from local_settings import *
+try: from .local_settings import *
 except: pass # pylint: disable-msg=W0702
