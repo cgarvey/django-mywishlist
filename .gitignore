@@ -12,6 +12,10 @@ node_modules/
 # VirtualEnv
 venv/
 
+# Docker
+utils/docker/vols
+
 # Django
 local_settings.py
-
+.env
+publish/
