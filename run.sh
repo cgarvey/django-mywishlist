@@ -56,7 +56,7 @@ function do_init() {
         echo "Pulling needed Docker Images"
         # docker pull --platform linux/x86_64 mysql:5.7
         docker pull --platform linux/x86_64 mysql:8
-        docker pull python:3.4
+        docker pull python:3.11.3
         echo ""
         echo ""
 

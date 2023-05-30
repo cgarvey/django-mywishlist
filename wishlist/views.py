@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 
 # Create your views here.
 def index( request ):
@@ -19,4 +19,4 @@ def index( request ):
 			arr = data[-1]
 			arr.append( item )
 
-	return render_to_response( "wishlist/index.html", { "data":data } )
+	return render( request, "wishlist/index.html", { "data":data } )

@@ -43,6 +43,7 @@ DATABASES = {
         'HOST': '' #localhost
     }
 }
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'

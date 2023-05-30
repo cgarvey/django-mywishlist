@@ -1,2 +1,2 @@
-Django>=2.0.0,<2.0.99
-mysqlclient>=1.3.7,<=1.3.13
+Django==3.2.19
+mysqlclient==2.1.1
