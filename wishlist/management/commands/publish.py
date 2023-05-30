@@ -1,9 +1,7 @@
-from django.core.management.base import NoArgsCommand
+from django.core.management.base import BaseCommand
 
-#pylint: disable-msg=W0232
-#pylint: disable-msg=W0613
-class Command(NoArgsCommand):
-	def handle_noargs( self, **options ):
+class Command(BaseCommand):
+	def handle( self, **options ):
 		from django.template.loader import render_to_string
 		from wishlist.models import Item
 
