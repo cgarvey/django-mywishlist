@@ -1,0 +1,37 @@
+version: '3'
+
+name: django-mywishlist
+
+services:
+  db:
+    platform: linux/x86_64
+    image: mysql:8
+    ports:
+      - "33306:3306"
+    env_file:
+      - ./.env
+    environment:
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - ./utils/docker/vols/mysqld:/var/run/mysqld
+      - ./utils/docker/vols/db:/var/lib/mysql
+    command:
+      --default-authentication-plugin=mysql_native_password
+      --bind-address=0.0.0.0
+
+    healthcheck:
+      test: ["CMD-SHELL", 'mysqladmin ping']
+      interval: 2s
+      timeout: 2s
+      retries: 100
+
+  web:
+    image: cgarvey/django-mywishlist
+    command: bash -c "sleep 3 && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8800:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
