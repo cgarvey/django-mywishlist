@@ -87,6 +87,8 @@ function do_init() {
 function do_run() {
     echo "Running Dev Docker env..."
     if [[ -f "docker-compose.yml" ]]; then
+        open http://localhost:8800/
+        open http://localhost:8800/djadmin/
         docker-compose up
     else
         echo "Can't find Docker Compose file, quitting."
