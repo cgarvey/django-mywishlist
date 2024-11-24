@@ -98,7 +98,7 @@ function do_run() {
 
 function do_mysql_client() {
     echo "Launching MySQL Client..."
-    mysql --protocol tcp -h localhost  -P 33306 -uroot -proot mywishlist
+    mysql --protocol tcp -h localhost  -P 33306 -udjangowishlist -pdjangowishlist djangowishlist
 }
 
 function do_db_migrate() {
